@@ -1,0 +1,44 @@
+#passgrinder form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#passgrinder h1 {
+    text-align: center;
+}
+
+#passgrinder small {
+    max-width: 94%;
+    margin: 4px auto 0;
+    line-height: 1em;
+}
+
+#passgrinder input[type="submit"], #passgrinder input[type="reset"] {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+#passgrinder #pg-message #success {
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    color: green;
+}
+
+#passgrinder #pg-message #fail {
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+
+#passgrinder .toggle-password {
+    cursor: pointer;
+}
+
+#passgrinder #pg-result {
+    display: none;
+}
