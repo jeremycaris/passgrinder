@@ -5,7 +5,7 @@
   Description: 
   Author:      Jeremy Caris
   Author URI:  https://passgrinder.com/
-  Version:     0.1
+  Version:     0.2
   Category:    utility
 
 */

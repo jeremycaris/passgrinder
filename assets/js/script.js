@@ -67,6 +67,7 @@ jQuery( document ).ready( function($) {
         $("#pg-result").hide();
         $('#pg-message #success').html("");
         $('#pg-message #fail').html("");
+        $('#pg-message #reset').html("");
     });
 });
 
@@ -126,12 +127,23 @@ jQuery( document ).ready( function($) {
                 input.attr("type", "password"); 
                 userstate = null;
             }
-
+            
+            // Send response
             if ( response.success == true ) {
                 $('#pg-message #success').html( response.data );
             } else {
                 $('#pg-message #fail').html( response.data );
             }
+            
+            // Auto reset form after time
+            if ( $("#pg-result-pass").val() ) {
+                setTimeout( function() { 
+                    $("#passgrinder-form").trigger('reset'); 
+                    $('#pg-message #reset').html("Form has automatically reset to protect your password."); 
+                    console.log( "PassGrinder: For automatically reset" ); 
+                }, 30000);
+            }
+            
         });
         
     });

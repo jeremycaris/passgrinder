@@ -149,6 +149,7 @@ class passgrinder {
         <div id="pg-message" class="form-group row">
             <span id="success"></span>
             <span id="fail"></span>
+            <span id="reset"></span>
         </div>
 
     </form>

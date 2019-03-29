@@ -35,6 +35,13 @@
     color: red;
 }
 
+#passgrinder #pg-message #reset {
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    color: dimgray;
+}
+
 #passgrinder .toggle-password {
     cursor: pointer;
 }
