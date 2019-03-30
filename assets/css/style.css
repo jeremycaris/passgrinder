@@ -39,13 +39,19 @@
     font-style: italic;
     width: 100%;
     text-align: center;
-    color: dimgray;
+    color: grey;
 }
 
-#passgrinder .toggle-password {
+#passgrinder .toggle-password, #passgrinder .toggle-copy {
     cursor: pointer;
 }
 
 #passgrinder #pg-result {
     display: none;
+}
+
+@media all and (max-width: 767px) {
+    #passgrinder #pg-message #success {
+        display: none;
+    }
 }

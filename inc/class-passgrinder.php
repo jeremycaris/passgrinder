@@ -34,6 +34,9 @@ class passgrinder {
         // Load z85 encoding
         wp_enqueue_script( 'passgrinder-z85', plugin_dir_url(__FILE__) . '../assets/js/encodeZ85.js' );
         
+        // Load clipboard.js
+        wp_enqueue_script( 'passgrinder-clipboardjs', plugin_dir_url(__FILE__) . '../assets/js/clipboard.min.js' );
+        
         
         // set variables for script
         wp_localize_script( 'passgrinder', 'settings', array(
@@ -54,7 +57,7 @@ class passgrinder {
         
         // send success or error
         if ( $pass !== "" ) {
-            wp_send_json_success( __( 'Copied to the clipboard!', 'passgrinder' ) );
+            wp_send_json_success( __( 'Successfully generated your password!', 'passgrinder' ) );
         } else {
             wp_send_json_error( __( 'Something went wrong. Please refresh and try again!', 'passgrinder' ) );
         }
@@ -139,9 +142,9 @@ class passgrinder {
 
         <div id="pg-result" class="form-group row">
             <div class="input-group col">
-                <input type="password" id="pg-result-pass" name="pg-result-pass" class="form-control" value="" placeholder="Your Generated Password" readonly />
+                <input type="text" id="pg-result-pass" name="pg-result-pass" class="form-control" value="" placeholder="Your Generated Password" />
                 <div class="input-group-append">
-                    <div class="input-group-text toggle-password"><i class="fa fa-eye"></i></div>
+                    <div class="input-group-text toggle-copy" data-clipboard-target="#pg-result-pass"><i class="fa fa-copy"></i></div>
                 </div>
             </div>
         </div>
