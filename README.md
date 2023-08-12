@@ -2,6 +2,10 @@
 
 Passgrinder is a Wordpress plugin which currently inserts the PassGrinder form via the shortcode, `[passgrinder]`. To turn off the form title use, `[passgrinder showtitle="no"]`.
 
+# Use one password for everything, securely!
+
+PassGrinder takes your one master password and generates a twenty-character strong password based on the website URL, domain name, app name, or unique phrase you choose. Your PassGrinder password is generated in your browser. PassGrinder is designed to make it easy for you to use strong, unique passwords online.
+
 # The Problem
 
 No security is absolute. Any security can be defeated with enough power, time, and resources. From mechanical locks to Fort Knox, no security is absolute.
