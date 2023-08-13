@@ -1,55 +1,9 @@
-// Check for jQuery
-if(typeof jQuery == 'undefined'){
-    document.write('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></'+'script>');
-} else {
-    console.log( "PassGrinder: jQuery loaded." );
-}
-
-
-
-// Check for font-awesome
-// Variation based on https://codepen.io/AllThingsSmitty/pen/YqjBqW
-jQuery( document ).ready( function($) {
-    function css(element, property) {
-        return window.getComputedStyle(element, null).getPropertyValue(property);
-    }
-    
-    var span = document.createElement('span');
-
-    span.className = 'fa';
-    span.style.display = 'none';
-    document.body.insertBefore(span, document.body.firstChild);
-
-    if ((css(span, 'font-family')) !== 'FontAwesome') {
-        document.write('<link rel="stylesheet" id="fontawesome-css"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" type="text/css" media="all" />');
-    } else {
-        console.log("PassGrinder: Font-Awesome loaded.");
-    }
-    document.body.removeChild(span);
-});
-
-
-
-// Check for Bootstrap
-jQuery( document ).ready( function($) {
-    // Will be true if Bootstrap 3-4 is loaded, false if Bootstrap 2 or no Bootstrap
-    var bootstrap_enabled = (typeof $().emulateTransitionEnd == 'function');
-    if (bootstrap_enabled == 'false') {
-        document.write('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></'+'script>');
-        document.write('<link rel="stylesheet" id="bootstrap-css  href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/cerulean/bootstrap.min.css" type="text/css" />');
-    } else {
-        console.log( "PassGrinder: Bootstrap loaded." );
-    }
-});
-
-
-
 // Toggle password field visibility
 jQuery( document ).ready( function($) {
     $("body").on('click', '.toggle-password', function() {
         $("i", this).toggleClass("fa-eye-slash");
         
-        var input = $(this).parent().prev();
+        var input = $(this).prev();
         
         if (input.attr("type") === "password") {
             input.attr("type", "text");

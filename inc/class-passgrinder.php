@@ -81,29 +81,23 @@ class passgrinder {
         $content = '
 <div id="passgrinder">
     <h1>' . $title . '</h1>
-    <form method="post" id="passgrinder-form">
-<!--        <label for="pg-password">Enter your single master password:</label> -->
-        <div id="pg-input1" class="form-group row">
-            <div class="input-group col">
-                <input id="pg-password" name="pg-password" type="password" class="form-control" placeholder="Master Password (Required)" required />
-                <div class="input-group-append">
-                    <div class="input-group-text toggle-password"><i class="fa fa-eye"></i></div>
-                </div>
+    <form method="post" id="passgrinder-form" autocomplete="off">
+        <div id="pg-input1" class="pt-2">
+            <div class="input-group flex-nowrap">
+                <input id="pg-password" name="pg-password" type="password" class="form-control" placeholder="Master Password (Required)" autocomplete="off" required />
+                <div class="input-group-text toggle-password"><i class="fa fa-eye"></i></div>
             </div>
         </div>
         
-<!--        <label for="pg-salt">Enter a unique phrase:</label> -->
-        <div id="pg-input2" class="form-group row">
-            <div class="input-group col">
-                <input id="pg-salt" name="pg-salt" type="password" class="form-control" placeholder="Unique Phrase (Optional)" />
-                <div class="input-group-append">
-                    <div class="input-group-text toggle-password"><i class="fa fa-eye"></i></div>
-                </div>
+        <div id="pg-input2" class="py-2">
+            <div class="input-group flex-nowrap">
+                <input id="pg-salt" name="pg-salt" type="password" class="form-control" placeholder="Unique Phrase (Optional)" autocomplete="off" />
+                <div class="input-group-text toggle-password"><i class="fa fa-eye"></i></div>
             </div>
-            <small id="pg-salt-help" class="form-text text-muted">It is recommended to use the website URL, domain name, or app name where this password will be used to grind your master password into something more unique.</small>
+            <small id="pg-salt-help" class="form-text mt-2 text-muted">It is recommended to use the website URL, domain name, or app name where this password will be used to grind your master password into something more unique.</small>
         </div>
         
-        <div id="pg-variations" class="form-group">
+        <div id="pg-variations" class="form-group pt-2">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="pg-variation" id="default" value="0" checked>
                 <label class="form-check-label" for="default">
@@ -131,7 +125,7 @@ class passgrinder {
             <small id="pg-variations-help" class="form-text text-muted">You may want to use a variation if you are required to change your password without needing to change your master password or unique phrase.</small>
         </div>
         
-        <div id="pg-variations" class="form-group row">
+        <div id="pg-variations" class="form-group row pt-3">
             <div class="input-group col">
                 <input id="pg-submit" type="submit" value="Submit" class="btn btn-primary" />
             </div>
@@ -140,12 +134,10 @@ class passgrinder {
             </div>
         </div>
 
-        <div id="pg-result" class="form-group row">
-            <div class="input-group col">
+        <div id="pg-result" class="form-group row pt-3">
+            <div class="input-group flex-nowrap">
                 <input type="text" id="pg-result-pass" name="pg-result-pass" class="form-control" value="" placeholder="Your Generated Password" />
-                <div class="input-group-append">
-                    <div class="input-group-text toggle-copy" data-clipboard-target="#pg-result-pass"><i class="fa fa-copy"></i></div>
-                </div>
+                <div class="input-group-text toggle-copy" data-clipboard-target="#pg-result-pass"><i class="fa fa-copy"></i></div>
             </div>
         </div>
 
