@@ -106,8 +106,7 @@ jQuery( document ).ready( function($) {
             
         });
         
-    },
-    { passive: true });
+    });
     
 });
 
