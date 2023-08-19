@@ -88,6 +88,9 @@ class passgrinder {
                 <div class="input-group-text toggle-password"><i class="fa fa-eye"></i></div>
             </div>
         </div>
+
+        <!-- Prevent browser promt to save password -->
+        <input type="password" style="display:none"/>
         
         <div id="pg-input2" class="py-2">
             <div class="input-group flex-nowrap">
