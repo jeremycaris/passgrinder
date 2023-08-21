@@ -1,5 +1,16 @@
-// Toggle password field visibility
 jQuery( document ).ready( function($) {
+
+    // Field focus on load
+    $('#pg-password').focus();
+
+
+    // Auto select all on generated pass field on click
+    $('#pg-result-pass').on('touchstart click', function(){ 
+        $(this).select(); 
+    });
+
+
+    // Toggle password field visibility
     $("body").on('click', '.toggle-password', function() {
         $("i", this).toggleClass("fa-eye-slash");
         
@@ -11,36 +22,20 @@ jQuery( document ).ready( function($) {
             input.attr("type", "password");
         }
     });
-});
 
 
-
-// Auto select all on generated pass field on click
-jQuery( document ).ready( function($) {
-    $('#pg-result-pass').on('touchstart click', function(){ 
-        $(this).select(); 
-    });
-});
-
-
-    
-// Hide generated password field and response on reset
-jQuery( document ).ready( function($) {
+    // Hide generated password field and response on reset
     $("input[type='reset']").closest('form').on('reset', function(event) {
         $("#pg-result").hide();
         $('#pg-message #success').html("");
         $('#pg-message #fail').html("");
         $('#pg-message #reset').html("");
     });
-});
 
 
-
-// shortcode_form functionality
-jQuery( document ).ready( function($) {
-    $( '#passgrinder-form' ).submit(function(e){
+    // shortcode_form functionality
+    $( '#passgrinder-form' ).submit(function(e){x
         e.preventDefault();
-        
         
         // Hash the password/s
         var md5;
@@ -58,7 +53,6 @@ jQuery( document ).ready( function($) {
         }
         var pg_z85=encodeZ85.encode(md5);
         
-        
         // Set ajax data
         var data = {
             'action' : 'eval_helper',
@@ -67,7 +61,6 @@ jQuery( document ).ready( function($) {
             'vari'   : $('[name="pg-variation"]:checked').val(),
             'nonce'  : settings.ajaxnonce,
         };
-        
         
         // Form post action and response handling
         $.post(settings.ajaxurl, data, function(response) {
@@ -109,6 +102,3 @@ jQuery( document ).ready( function($) {
     });
     
 });
-
-
-
